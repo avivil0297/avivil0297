@@ -21,7 +21,6 @@ I'm an IT professional specializing in system administration, technical support,
 # Get-SysAdminInfo
 $Aviv = [PSCustomObject]@{
     Location       = "Tel-Aviv, Israel"
-    CurrentRole    = "Technical Support at G1"
     Specialization = "SysAdmin | IT Infrastructure | Cloud Solutions"
     Skills         = @("Windows Server", "Linux", "Active Directory", "VMware", "Docker", "PowerShell", "Python")
     Languages      = @{English = "Highly Proficient"; Hebrew = "Native"}
@@ -37,7 +36,6 @@ echo "===== SYSADMIN PROFILE ====="
 declare -A PROFILE=(
   ["name"]="Aviv Levi" 
   ["location"]="Tel-Aviv, Israel"
-  ["role"]="Technical Support at G1"
 )
 
 declare -a SKILLS=("Windows Server" "Linux" "Active Directory" "VMware" "Docker" "PowerShell" "Python")
@@ -51,7 +49,6 @@ function display_skills() {
 
 echo "Name: ${PROFILE[name]}"
 echo "Location: ${PROFILE[location]}"
-echo "Current Role: ${PROFILE[role]}"
 display_skills
 echo "============================="
 ```
@@ -60,10 +57,9 @@ echo "============================="
 # sysadmin_profile.py
 
 class SysAdmin:
-    def __init__(self, name, location, current_role):
+    def __init__(self, name, location):
         self.name = name
         self.location = location
-        self.current_role = current_role
         self.skills = ["Windows Server", "Linux", "Active Directory", 
                       "VMware", "Docker", "PowerShell", "Python"]
         self.languages = {"English": "Highly Proficient", "Hebrew": "Native"}
@@ -71,13 +67,12 @@ class SysAdmin:
     def display_info(self):
         print(f"Name: {self.name}")
         print(f"Based in: {self.location}")
-        print(f"Current position: {self.current_role}")
         print("Technical skills:")
         for skill in self.skills:
             print(f"  - {skill}")
         
 if __name__ == "__main__":
-    aviv = SysAdmin("Aviv Levi", "Tel-Aviv, Israel", "Technical Support at G1")
+    aviv = SysAdmin("Aviv Levi", "Tel-Aviv, Israel")
     aviv.display_info()
 ```
 
